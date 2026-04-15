@@ -41,4 +41,8 @@ volumes:
 
 networks:
   app_network:
+<<<<<<< HEAD
     driver: bridge
+=======
+    driver: bridge
+>>>>>>> b796f36ae59b2a4276ac80cfc00360b96334ef3e
