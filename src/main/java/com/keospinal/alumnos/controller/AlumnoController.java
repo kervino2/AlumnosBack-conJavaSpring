@@ -20,7 +20,7 @@ public class AlumnoController {
     private AlumnoService alumnoService;
     
     // Obtener todos los alumnos
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Alumno>> getAllAlumnos() {
         List<Alumno> alumnos = alumnoService.findAll();
         return ResponseEntity.ok(alumnos);
