@@ -1,20 +1,17 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-RootPass2024!}
+      MYSQL_DATABASE: ${DB_NAME:-sistema_notas}
+      MYSQL_USER: ${DB_USER:-tecnico_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-TeCniCo2026}
     ports:
-      - "${DB_PORT}:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./database:/docker-entrypoint-initdb.d  # Para datos de prueba
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
@@ -30,12 +27,12 @@ services:
       mysql:
         condition: service_healthy
     environment:
-      DB_URI: jdbc:mysql://mysql:3306/${DB_NAME}?useSSL=false&serverTimezone=America/Bogota&allowPublicKeyRetrieval=true
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
+      DB_URI: jdbc:mysql://mysql:3306/${DB_NAME:-sistema_notas}?useSSL=false&serverTimezone=America/Bogota&allowPublicKeyRetrieval=true
+      DB_USER: ${DB_USER:-tecnico_user}
+      DB_PASSWORD: ${DB_PASSWORD:-TeCniCo2026}
       DB_DRIVER: com.mysql.cj.jdbc.Driver
     ports:
-      - "${API_PORT}:8080"
+      - "8080:8080"
     networks:
       - app_network
 
@@ -44,5 +41,4 @@ volumes:
 
 networks:
   app_network:
-    driver: bridge
     driver: bridge

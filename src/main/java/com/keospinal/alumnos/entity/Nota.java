@@ -10,10 +10,10 @@ public class Nota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private Double valor;
     
-    @Column(name = "fecha_registro", nullable = false)  // La columna en BD sigue con _
+    @Column(name = "fecha_registro", nullable = false) 
     private Date fechaRegistro;
 
     @ManyToOne
@@ -24,7 +24,6 @@ public class Nota {
     @JoinColumn(name = "materia_id")
     private Materia materia;
 
-    
     // Getters y Setters
     public Long getId() {
         return id;
@@ -46,8 +45,8 @@ public class Nota {
         return fechaRegistro;
     }
     
-    public void setFechaRegistro(Date fecha_registro) {
-        this.fechaRegistro = fecha_registro;
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
     
     public Alumno getAlumno() {

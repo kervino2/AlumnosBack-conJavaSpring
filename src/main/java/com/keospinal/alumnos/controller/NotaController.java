@@ -56,7 +56,7 @@ public class NotaController {
     @GetMapping("/alumno/{alumnoId}/materia/{materiaId}")
     public ResponseEntity<?> getNotasByAlumnoMateria(@PathVariable Long alumnoId, @PathVariable Long materiaId) {
         try {
-            List<Nota> notas = notaService.findByAlumno(alumnoId);
+            List<Nota> notas = notaService.findByAlumnoMateria(alumnoId, materiaId);
             return ResponseEntity.ok(notas);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
