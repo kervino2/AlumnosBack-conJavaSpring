@@ -4,7 +4,7 @@ API de Gestión de Notas - Backend
 
 Crear archivo .env en la raíz del proyecto:
 
-# ------------------------------------
+# .env
 
 DB_NAME=alumnos
 DB_USER=tecnico_user
@@ -16,8 +16,6 @@ DB_DRIVER=com.mysql.cj.jdbc.Driver
 API_PORT=8080
 
 COMPOSE_PROJECT_NAME=prueba_tecnica
-
-# ------------------------------------
 
 
 ## Cómo ejecutar
