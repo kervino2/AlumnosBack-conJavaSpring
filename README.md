@@ -5,7 +5,7 @@ API de Gestión de Notas - Backend
 Crear archivo .env en la raíz del proyecto:
 
 # ------------------------------------
-# Configuración de Base de Datos
+
 DB_NAME=alumnos
 DB_USER=tecnico_user
 DB_PASSWORD=TeCniCo2026
@@ -13,10 +13,8 @@ DB_ROOT_PASSWORD=TeCniCo2026
 DB_PORT=3307
 DB_DRIVER=com.mysql.cj.jdbc.Driver
 
-# API
 API_PORT=8080
 
-# Docker Compose
 COMPOSE_PROJECT_NAME=prueba_tecnica
 
 # ------------------------------------
